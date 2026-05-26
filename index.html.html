@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Especialización Postquirúrgico – Evelynne Rojas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#fdf6ec;
+  --gold:#c9965a;
+  --gold-light:#e8c49a;
+  --gold-dark:#8a6234;
+  --brown:#5c3d1e;
+  --brown-deep:#2e1f0f;
+  --sand:#ede0cc;
+  --sand-dark:#d4b896;
+  --white:#fff;
+  --text:#2e1f0f;
+  --muted:#7a5c3e;
+}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  overflow-x:hidden;
+}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  background:var(--brown-deep);
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  padding:4rem 2rem;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,150,90,0.12) 0%, transparent 70%);
+}
+.hero-line-v{
+  position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom, transparent, rgba(201,150,90,0.2) 30%, rgba(201,150,90,0.2) 70%, transparent);
+}
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:860px;margin:0 auto;
+  text-align:center;
+}
+.hero-eyebrow{
+  font-family:'Jost',sans-serif;
+  font-size:11px;letter-spacing:.35em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+  display:flex;align-items:center;justify-content:center;gap:1rem;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{
+  content:'';display:block;width:40px;height:1px;background:var(--gold-dark);
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,7vw,5.5rem);
+  font-weight:300;line-height:1.1;
+  color:var(--cream);
+  margin-bottom:1.5rem;
+}
+.hero-title em{
+  font-style:italic;color:var(--gold-light);
+}
+.hero-subtitle{
+  font-size:1rem;color:rgba(253,246,236,0.6);
+  max-width:520px;margin:0 auto 1.5rem;
+  line-height:1.8;font-weight:300;
+}
+/* Fecha destacada en hero */
+.hero-date-badge{
+  display:inline-flex;align-items:center;gap:1.2rem;
+  border:1px solid rgba(201,150,90,0.35);
+  padding:.8rem 1.8rem;
+  margin-bottom:2.5rem;
+}
+.hero-date-badge .date-item{text-align:center;}
+.hero-date-badge .date-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,150,90,0.6);display:block;margin-bottom:.2rem;}
+.hero-date-badge .date-val{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--gold-light);font-weight:400;}
+.hero-date-badge .sep{width:1px;height:30px;background:rgba(201,150,90,0.25);}
+.hero-cta{
+  display:inline-block;
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold-light);
+  padding:.9rem 2.5rem;
+  font-family:'Jost',sans-serif;
+  font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:all .3s ease;
+}
+.hero-cta:hover{background:var(--gold);color:var(--brown-deep);}
+.hero-scroll{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:rgba(201,150,90,0.5);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,150,90,0.5),transparent);}
+
+/* ─── SECCIÓN: EL ERROR ─── */
+.error-section{
+  background:var(--cream);
+  padding:6rem 2rem;
+}
+.container{max-width:900px;margin:0 auto;}
+.section-tag{
+  font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.section-tag::before{content:'';display:block;width:24px;height:1px;background:var(--gold);}
+.section-heading{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4.5vw,3.4rem);
+  font-weight:300;line-height:1.15;
+  color:var(--brown-deep);
+  margin-bottom:1.5rem;
+}
+.section-heading em{font-style:italic;color:var(--gold-dark);}
+.section-lead{
+  font-size:1rem;color:var(--muted);line-height:1.9;
+  max-width:600px;margin-bottom:3rem;font-weight:300;
+}
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:1px;
+  background:var(--sand-dark);
+  border:1px solid var(--sand-dark);
+  margin-bottom:4rem;
+}
+.myth-card{
+  background:var(--white);
+  padding:2rem 1.5rem;
+}
+.myth-icon{
+  width:36px;height:36px;
+  border:1px solid var(--sand-dark);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1.2rem;
+  font-size:16px;color:var(--gold-dark);
+}
+.myth-label{
+  font-size:9px;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:.5rem;
+}
+.myth-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:600;
+  color:var(--brown-deep);margin-bottom:.7rem;
+}
+.myth-text{font-size:.85rem;color:var(--muted);line-height:1.8;}
+
+/* ─── STATEMENT ─── */
+.statement-section{
+  background:var(--brown);
+  padding:5rem 2rem;
+  text-align:center;
+}
+.statement-inner{max-width:700px;margin:0 auto;}
+.statement-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4vw,2.8rem);
+  font-weight:300;font-style:italic;
+  color:var(--cream);line-height:1.4;
+  margin-bottom:2rem;
+}
+.statement-quote strong{color:var(--gold-light);font-weight:400;}
+.statement-rule{width:60px;height:1px;background:var(--gold-dark);margin:0 auto;}
+
+/* ─── POR QUÉ ESPECIALIZARSE ─── */
+.why-section{
+  background:var(--cream);
+  padding:6rem 2rem;
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:3rem;
+  align-items:start;
+}
+@media(max-width:680px){.why-grid{grid-template-columns:1fr;}}
+.why-left .section-lead{margin-bottom:0;}
+.benefit-list{list-style:none;}
+.benefit-item{
+  display:flex;gap:1.2rem;
+  padding:1.5rem 0;
+  border-bottom:1px solid var(--sand);
+}
+.benefit-item:last-child{border-bottom:none;}
+.benefit-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.2rem;font-weight:300;
+  color:var(--sand-dark);line-height:1;
+  min-width:40px;
+}
+.benefit-content{}
+.benefit-title{
+  font-size:.8rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--brown-deep);margin-bottom:.4rem;
+}
+.benefit-text{font-size:.85rem;color:var(--muted);line-height:1.7;}
+
+/* ─── PROGRAMA ─── */
+.program-section{
+  background:var(--brown-deep);
+  padding:6rem 2rem;
+}
+.program-section .section-tag{color:var(--gold-light);}
+.program-section .section-heading{color:var(--cream);}
+.program-section .section-heading em{color:var(--gold-light);}
+.program-section .section-lead{color:rgba(253,246,236,0.55);}
+
+/* Info logística */
+.logistics-bar{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1px;
+  background:rgba(201,150,90,0.15);
+  border:1px solid rgba(201,150,90,0.2);
+  margin-bottom:3rem;
+}
+.logistics-item{
+  background:rgba(253,246,236,0.03);
+  padding:1.3rem 1.5rem;
+  text-align:center;
+}
+.logistics-label{
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(201,150,90,0.5);margin-bottom:.4rem;
+}
+.logistics-val{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;color:var(--cream);line-height:1.3;
+}
+.logistics-sub{font-size:.72rem;color:rgba(253,246,236,0.35);margin-top:.2rem;}
+
+.months-wrapper{display:flex;flex-direction:column;gap:2px;}
+.month-block{
+  background:rgba(253,246,236,0.04);
+  border:1px solid rgba(201,150,90,0.15);
+  overflow:hidden;
+}
+.month-header{
+  display:flex;align-items:center;gap:1.5rem;
+  padding:1.5rem 2rem;
+  cursor:pointer;
+  transition:background .2s;
+}
+.month-header:hover{background:rgba(201,150,90,0.06);}
+.month-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3rem;font-weight:300;
+  color:rgba(201,150,90,0.25);line-height:1;
+  min-width:55px;
+}
+.month-info{flex:1;}
+.month-label{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
+.month-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;color:var(--cream);font-weight:400;
+}
+.month-arrow{color:var(--gold-dark);font-size:14px;transition:transform .3s;}
+.month-arrow.open{transform:rotate(180deg);}
+.month-classes{
+  display:none;
+  padding:0 2rem 1.5rem;
+}
+.month-classes.open{display:block;}
+.class-item{
+  display:flex;gap:1rem;
+  padding:.8rem 0;
+  border-top:1px solid rgba(201,150,90,0.08);
+  font-size:.83rem;
+}
+.class-week{
+  min-width:60px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--gold-dark);padding-top:2px;
+}
+.class-name{color:rgba(253,246,236,0.7);line-height:1.5;}
+.class-mode{
+  font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.15rem .5rem;margin-top:3px;align-self:flex-start;flex-shrink:0;
+}
+.class-mode.virtual{background:rgba(201,150,90,0.12);color:var(--gold);}
+.class-mode.presencial{background:rgba(94,65,30,0.4);color:var(--gold-light);}
+
+/* ─── PRECIO ─── */
+.price-section{
+  background:var(--sand);
+  padding:6rem 2rem;
+  text-align:center;
+}
+.price-card{
+  max-width:520px;margin:0 auto;
+  background:var(--white);
+  border:1px solid var(--sand-dark);
+  padding:3rem 2.5rem;
+}
+.price-from{font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.price-amount{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4.5rem;font-weight:300;
+  color:var(--brown-deep);line-height:1;margin-bottom:.3rem;
+}
+.price-currency{font-size:1.5rem;vertical-align:super;}
+.price-suffix{font-size:1rem;color:var(--muted);}
+.price-divider{width:40px;height:1px;background:var(--sand-dark);margin:1.5rem auto;}
+.price-features{list-style:none;text-align:left;margin-bottom:2rem;}
+.price-feature{
+  display:flex;align-items:flex-start;gap:.8rem;
+  padding:.6rem 0;
+  border-bottom:1px solid var(--sand);
+  font-size:.85rem;color:var(--muted);
+}
+.price-feature:last-child{border-bottom:none;}
+.price-feature::before{
+  content:'✦';color:var(--gold);font-size:.7rem;padding-top:3px;flex-shrink:0;
+}
+.price-installment{
+  background:var(--cream);
+  padding:1rem 1.5rem;
+  font-size:.83rem;color:var(--muted);
+  margin-bottom:2rem;
+  text-align:center;
+}
+.price-installment strong{color:var(--brown);display:block;font-size:1rem;margin-bottom:.3rem;}
+.btn-enroll{
+  display:block;width:100%;
+  background:var(--brown-deep);
+  color:var(--cream);
+  padding:1.1rem;
+  font-family:'Jost',sans-serif;
+  font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;
+  border:none;cursor:pointer;
+  text-decoration:none;text-align:center;
+  transition:background .3s;
+}
+.btn-enroll:hover{background:var(--brown);}
+
+/* ─── TESTIMONIOS ─── */
+.testi-section{background:var(--cream);padding:6rem 2rem;}
+.testi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem;
+  margin-top:3rem;
+}
+.testi-card{
+  background:var(--white);
+  border:1px solid var(--sand);
+  padding:2rem;
+}
+.testi-stars{color:var(--gold);font-size:.8rem;margin-bottom:1rem;letter-spacing:.1em;}
+.testi-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.05rem;font-weight:400;font-style:italic;
+  color:var(--brown-deep);line-height:1.7;margin-bottom:1.5rem;
+}
+.testi-author{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);}
+
+/* ─── DOCENTE ─── */
+.docente-section{background:var(--brown-deep);padding:6rem 2rem;}
+.docente-grid{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:4rem;align-items:center;
+  max-width:820px;margin:0 auto;
+}
+@media(max-width:640px){.docente-grid{grid-template-columns:1fr;}}
+.docente-portrait{
+  aspect-ratio:3/4;
+  background:rgba(201,150,90,0.08);
+  border:1px solid rgba(201,150,90,0.2);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.docente-portrait-inner{width:80%;text-align:center;}
+.docente-initials{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5rem;font-weight:300;color:rgba(201,150,90,0.3);
+}
+.docente-name-portrait{
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(201,150,90,0.5);margin-top:.5rem;
+}
+.docente-content .section-heading{color:var(--cream);}
+.docente-content .section-heading em{color:var(--gold-light);}
+.docente-content .section-lead{color:rgba(253,246,236,0.55);margin-bottom:2rem;}
+.creds{list-style:none;}
+.cred{
+  display:flex;gap:1rem;align-items:flex-start;
+  padding:.7rem 0;border-bottom:1px solid rgba(201,150,90,0.1);
+  font-size:.82rem;color:rgba(253,246,236,0.55);
+}
+.cred::before{content:'—';color:var(--gold-dark);flex-shrink:0;}
+
+/* ─── SOCIAL BAR ─── */
+.social-section{
+  background:var(--brown);
+  padding:3rem 2rem;
+}
+.social-inner{
+  max-width:600px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;flex-wrap:wrap;
+}
+.social-link{
+  display:flex;align-items:center;gap:.6rem;
+  color:var(--cream);text-decoration:none;
+  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.6rem 1.2rem;
+  border:1px solid rgba(201,150,90,0.25);
+  transition:all .3s;
+}
+.social-link:hover{border-color:var(--gold);color:var(--gold-light);}
+.social-icon{font-size:1.1rem;}
+
+/* ─── CTA FINAL ─── */
+.cta-final{
+  background:var(--gold);
+  padding:5rem 2rem;
+  text-align:center;
+}
+.cta-final .section-heading{color:var(--brown-deep);}
+.cta-final .section-lead{color:var(--brown);max-width:560px;margin:0 auto 2.5rem;}
+.btn-final{
+  display:inline-block;
+  background:var(--brown-deep);
+  color:var(--cream);
+  padding:1.1rem 3rem;
+  font-family:'Jost',sans-serif;
+  font-size:.78rem;letter-spacing:.25em;text-transform:uppercase;
+  text-decoration:none;
+  transition:opacity .3s;
+}
+.btn-final:hover{opacity:.85;}
+.cta-contact{
+  margin-top:2rem;font-size:.8rem;color:var(--brown);
+}
+.cta-contact a{color:var(--brown-deep);text-decoration:none;font-weight:500;}
+.cta-contact a:hover{text-decoration:underline;}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--brown-deep);
+  padding:2.5rem 2rem;text-align:center;
+}
+.footer-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:300;
+  color:rgba(201,150,90,0.5);
+  letter-spacing:.15em;
+  margin-bottom:.8rem;
+}
+.footer-links{
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;flex-wrap:wrap;
+  margin-bottom:1rem;
+}
+.footer-links a{
+  font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(201,150,90,0.35);text-decoration:none;
+  transition:color .2s;
+}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{
+  font-size:.68rem;letter-spacing:.1em;color:rgba(201,150,90,0.2);text-transform:uppercase;
+}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner>*{animation:fadeUp .8s ease both;}
+.hero-inner>*:nth-child(1){animation-delay:.1s}
+.hero-inner>*:nth-child(2){animation-delay:.3s}
+.hero-inner>*:nth-child(3){animation-delay:.5s}
+.hero-inner>*:nth-child(4){animation-delay:.65s}
+.hero-inner>*:nth-child(5){animation-delay:.8s}
+
+@media(max-width:520px){
+  .hero-date-badge{flex-direction:column;gap:.8rem;}
+  .hero-date-badge .sep{width:40px;height:1px;}
+  .price-card{padding:2rem 1.2rem;}
+}
+</style>
+</head>
+<body>
+
+<h2 class="sr-only">Programa de Especialización en Abordaje Postquirúrgico con Evelynne Rojas – Inicia 22 de junio 2025</h2>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line-v"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Surgery Recovery 360 · Evelynne Rojas</div>
+    <h1 class="hero-title">
+      El postquirúrgico<br>
+      no es un drenaje.<br>
+      <em>Es una especialidad.</em>
+    </h1>
+    <p class="hero-subtitle">
+      Un programa de alta especialización para cosmiatras y profesionales de salud estética que quieren dominar el abordaje postoperatorio con criterio clínico, no con intuición.
+    </p>
+    <div class="hero-date-badge">
+      <div class="date-item">
+        <span class="date-label">Inicio</span>
+        <span class="date-val">Lunes 22 de junio</span>
+      </div>
+      <div class="sep"></div>
+      <div class="date-item">
+        <span class="date-label">Hora</span>
+        <span class="date-val">7:00 PM</span>
+      </div>
+      <div class="sep"></div>
+      <div class="date-item">
+        <span class="date-label">Modalidad</span>
+        <span class="date-val">Híbrido</span>
+      </div>
+      <div class="sep"></div>
+      <div class="date-item">
+        <span class="date-label">Clases</span>
+        <span class="date-val">24 en total</span>
+      </div>
+    </div>
+    <a href="https://wa.me/51935159381?text=Hola%20Evelynne%2C%20quiero%20inscribirme%20al%20programa%20de%20especialización%20postquirúrgico%20que%20inicia%20el%2022%20de%20junio" class="hero-cta" target="_blank" rel="noopener">Asegurar mi cupo</a>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Explorar
+  </div>
+</section>
+
+<!-- EL ERROR MÁS CARO -->
+<section class="error-section">
+  <div class="container">
+    <div class="section-tag">El problema que nadie nombra</div>
+    <h2 class="section-heading">Muchas aprenden a dar<br><em>drenajes. Pocas aprenden<br>a tratar complicaciones.</em></h2>
+    <p class="section-lead">
+      El mercado de la estética creció, las cirugías se multiplicaron, y los pacientes llegaron buscando a alguien que los cuide. El problema es lo que les ofrecieron.
+    </p>
+    <div class="cards-grid">
+      <div class="myth-card">
+        <div class="myth-icon">✗</div>
+        <div class="myth-label">Mito</div>
+        <div class="myth-title">Un drenaje linfático es abordaje postquirúrgico</div>
+        <p class="myth-text">El drenaje es una herramienta. El abordaje postquirúrgico es un protocolo clínico completo que requiere conocimiento de fisiopatología, cicatrización, manejo de tejidos y criterio para derivar casos críticos.</p>
+      </div>
+      <div class="myth-card">
+        <div class="myth-icon">✗</div>
+        <div class="myth-label">Mito</div>
+        <div class="myth-title">Cualquier cosmiatra puede tratar fibrosis o complicaciones</div>
+        <p class="myth-text">Un paciente con fibrosis severa, hematoma organizado o infección activa no es un caso de cabina. Tratarlo sin formación específica es un riesgo jurídico, reputacional y, sobre todo, un riesgo para el paciente.</p>
+      </div>
+      <div class="myth-card">
+        <div class="myth-icon">✗</div>
+        <div class="myth-label">Mito</div>
+        <div class="myth-title">Con experiencia en masajes ya es suficiente</div>
+        <p class="myth-text">El tejido postquirúrgico tiene una fisiología diferente. Las fases de cicatrización, el comportamiento del colágeno desorganizado y la respuesta inflamatoria exigen un lenguaje técnico propio. La experiencia en masajes no lo reemplaza.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement-section">
+  <div class="statement-inner">
+    <p class="statement-quote">
+      "Seguir operando sin la formación correcta no es valentía.<br>
+      Es <strong>el camino más corto hacia una demanda,<br>una complicación grave, y el fin de tu carrera.</strong>"
+    </p>
+    <div class="statement-rule"></div>
+  </div>
+</section>
+
+<!-- POR QUÉ ESPECIALIZARSE -->
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-left">
+        <div class="section-tag">Por qué importa</div>
+        <h2 class="section-heading">Lo que cambia cuando te <em>especializas de verdad</em></h2>
+        <p class="section-lead">
+          No se trata de agregar un servicio más a tu menú. Se trata de convertirte en la profesional a quien los cirujanos refieren, las clínicas buscan y los pacientes regresan.
+        </p>
+      </div>
+      <div class="why-right">
+        <ul class="benefit-list">
+          <li class="benefit-item">
+            <span class="benefit-num">01</span>
+            <div class="benefit-content">
+              <div class="benefit-title">Cobras por tu criterio, no por tu tiempo</div>
+              <p class="benefit-text">Una especialista en postquirúrgico justifica tarifas 3–5x superiores a una cosmiatra general. El conocimiento clínico tiene precio diferenciado.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <span class="benefit-num">02</span>
+            <div class="benefit-content">
+              <div class="benefit-title">Te proteges legalmente</div>
+              <p class="benefit-text">Sabes exactamente qué está dentro de tu campo de acción, cuándo derivar y cómo documentar. La seguridad jurídica no es un extra — es parte del programa.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <span class="benefit-num">03</span>
+            <div class="benefit-content">
+              <div class="benefit-title">Las clínicas y cirujanos te buscan a ti</div>
+              <p class="benefit-text">El 80% de las clínicas estéticas en Lima no tiene protocolos postquirúrgicos formales. Una especialista con criterio clínico es un activo que están dispuestos a pagar.</p>
+            </div>
+          </li>
+          <li class="benefit-item">
+            <span class="benefit-num">04</span>
+            <div class="benefit-content">
+              <div class="benefit-title">Manejas lo que otras no pueden</div>
+              <p class="benefit-text">Edemas, hematomas, fibrosis, adherencias, piel postquirúrgica compleja. Serás la referencia para los casos difíciles que el mercado no sabe dónde llevar.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMA -->
+<section class="program-section" id="programa">
+  <div class="container">
+    <div class="section-tag">Estructura académica</div>
+    <h2 class="section-heading">24 clases. 3 meses.<br><em>Sin relleno.</em></h2>
+    <p class="section-lead">12 clases teóricas virtuales los lunes via Google Meet + 12 clases prácticas presenciales los jueves en San Borja. Anatomía clínica, fisiopatología quirúrgica, tecnologías modernas y manejo de complicaciones.</p>
+
+    <div class="logistics-bar">
+      <div class="logistics-item">
+        <div class="logistics-label">Inicio</div>
+        <div class="logistics-val">Lunes 22 de junio</div>
+        <div class="logistics-sub">7:00 PM</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Clases teóricas</div>
+        <div class="logistics-val">Lunes · Google Meet</div>
+        <div class="logistics-sub">12 clases virtuales</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Clases prácticas</div>
+        <div class="logistics-val">Jueves · Presencial</div>
+        <div class="logistics-sub">12 clases en San Borja</div>
+      </div>
+      <div class="logistics-item">
+        <div class="logistics-label">Sede práctica</div>
+        <div class="logistics-val">Av. Aviación 2919</div>
+        <div class="logistics-sub">San Borja Sur, Lima</div>
+      </div>
+    </div>
+
+    <div class="months-wrapper">
+      <div class="month-block">
+        <div class="month-header" onclick="toggleMonth(this)">
+          <span class="month-num">01</span>
+          <div class="month-info">
+            <div class="month-label">Mes uno</div>
+            <div class="month-title">Fundamentos anatómicos y sistemas de drenaje especializado</div>
+          </div>
+          <span class="month-arrow">▾</span>
+        </div>
+        <div class="month-classes">
+          <div class="class-item"><span class="class-week">Semana 1</span><span class="class-name">Anatomía y fisiología del sistema linfático — capilares, colectores, cuadrantes y vías de evacuación</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 1</span><span class="class-name">Práctica: evaluación y palpación del sistema linfático</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 2</span><span class="class-name">Morfología corporal y antropometría aplicada — biotipos, distribución adiposa, evaluación diagnóstica</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 2</span><span class="class-name">Práctica: evaluación morfológica y diagnóstico pre-intervención</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 3</span><span class="class-name">Evidencia clínica: Método Vodder vs. Linfomodelaje Brasileño — indicaciones y contraindicaciones postquirúrgicas</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 3</span><span class="class-name">Práctica: maniobras de drenaje diferenciado en tejido postquirúrgico</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 4</span><span class="class-name">Abordaje y preparación preoperatoria de la piel — protocolos de hidratación y fortalecimiento de barrera cutánea</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 4</span><span class="class-name">Práctica: aplicación de protocolos preoperatorios en cabina</span><span class="class-mode presencial">Presencial</span></div>
+        </div>
+      </div>
+
+      <div class="month-block">
+        <div class="month-header" onclick="toggleMonth(this)">
+          <span class="month-num">02</span>
+          <div class="month-info">
+            <div class="month-label">Mes dos</div>
+            <div class="month-title">Fisiopatología quirúrgica y tecnologías de vanguardia</div>
+          </div>
+          <span class="month-arrow">▾</span>
+        </div>
+        <div class="month-classes">
+          <div class="class-item"><span class="class-week">Semana 1</span><span class="class-name">Fisiopatología del trauma quirúrgico y reparación tisular — fases de cicatrización y respuesta biológica</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 1</span><span class="class-name">Práctica: lectura del tejido en distintas fases de cicatrización</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 2</span><span class="class-name">Liposucción: variantes quirúrgicas y su impacto en el tejido — Lipo Láser, Vaser, PAL, HD</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 2</span><span class="class-name">Práctica: abordaje diferenciado según técnica quirúrgica recibida</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 3</span><span class="class-name">Procedimientos en cirugía plástica, estética y reconstructiva — abdominoplastia, mamoplastia, rinoplastia, lifting</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 3</span><span class="class-name">Práctica: protocolos específicos por tipo de cirugía</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 4</span><span class="class-name">Tecnologías modernas en quirófano y su repercusión postoperatoria — planificación del tratamiento en cabina</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 4</span><span class="class-name">Práctica: planificación de tratamientos según tecnología quirúrgica</span><span class="class-mode presencial">Presencial</span></div>
+        </div>
+      </div>
+
+      <div class="month-block">
+        <div class="month-header" onclick="toggleMonth(this)">
+          <span class="month-num">03</span>
+          <div class="month-info">
+            <div class="month-label">Mes tres</div>
+            <div class="month-title">Abordaje postoperatorio avanzado y complicaciones</div>
+          </div>
+          <span class="month-arrow">▾</span>
+        </div>
+        <div class="month-classes">
+          <div class="class-item"><span class="class-week">Semana 1</span><span class="class-name">Manejo clínico del edema y hematomas postquirúrgicos — clasificación, diagnóstico diferencial y abordaje cronológico</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 1</span><span class="class-name">Práctica: técnicas de reabsorción de edema y equimosis en cabina</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 2</span><span class="class-name">Prevención, detección temprana y manejo de la fibrosis — fisiopatología y protocolos de derivación de casos críticos</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 2</span><span class="class-name">Práctica: evaluación y abordaje inicial de fibrosis postquirúrgica</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 3</span><span class="class-name">Kinesiotaping aplicado a la rehabilitación estética — vendaje neuromuscular linfático en postoperatorio</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 3</span><span class="class-name">Práctica: aplicación de kinesiotaping linfático y fascial</span><span class="class-mode presencial">Presencial</span></div>
+          <div class="class-item"><span class="class-week">Semana 4</span><span class="class-name">Nutrición antiinflamatoria, abordaje psicoemocional y ética profesional — seguridad jurídica y consentimiento informado</span><span class="class-mode virtual">Virtual</span></div>
+          <div class="class-item"><span class="class-week">Semana 4</span><span class="class-name">Práctica integradora: casos clínicos reales y cierre del programa</span><span class="class-mode presencial">Presencial</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIO -->
+<section class="price-section">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center;">Inversión</div>
+    <h2 class="section-heading" style="text-align:center;margin-bottom:3rem;">
+      Una sola inversión.<br><em>Una carrera diferente.</em>
+    </h2>
+    <div class="price-card">
+      <div class="price-from">Programa completo de especialización · 24 clases</div>
+      <div class="price-amount"><span class="price-currency">S/</span> 1,800 <span class="price-suffix">PEN</span></div>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li class="price-feature">12 clases teóricas virtuales vía Google Meet (lunes 7PM)</li>
+        <li class="price-feature">12 clases prácticas presenciales (jueves · Av. Aviación 2919, San Borja)</li>
+        <li class="price-feature">Certificación digital al aprobar el programa</li>
+        <li class="price-feature">Material de lectura completo por módulo</li>
+        <li class="price-feature">Formación en seguridad jurídica y consentimiento informado</li>
+        <li class="price-feature">Casos clínicos reales con Evelynne Rojas</li>
+      </ul>
+      <div class="price-installment">
+        <strong>3 cuotas de S/ 680</strong>
+        Facilidad de pago fraccionado disponible
+      </div>
+      <a href="https://wa.me/51935159381?text=Hola%20Evelynne%2C%20quiero%20inscribirme%20al%20programa%20de%20especialización%20postquirúrgico%20que%20inicia%20el%2022%20de%20junio" class="btn-enroll" target="_blank" rel="noopener">Inscribirme ahora — 22 de junio</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testi-section">
+  <div class="container">
+    <div class="section-tag">Lo que dicen las pacientes</div>
+    <h2 class="section-heading">Resultados que <em>hablan solos</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+        <p class="testi-text">"Desde el primer día sentí un alivio en mi cuerpo. No solo me brindaste tratamiento, me diste información, conocimiento y apoyo emocional. Fuiste mi psicóloga y mi amiga."</p>
+        <div class="testi-author">Lizeth — Paciente referida desde Colombia</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+        <p class="testi-text">"Pasé por varios lugares después de la operación y nadie lograba ayudarme con la movilidad. Tú, desde el día 1, pudiste ayudarme. Ahora puedo mover mi brazo con total normalidad."</p>
+        <div class="testi-author">Valeriana — Postoperatorio de miembro superior</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+        <p class="testi-text">"Mi caso casi que clínico porque se convirtió con bacteria Escherichia coli. Si no fuera por ti no sé dónde estaría. Muy amable, muy paciente, muy profesional. Con los ojos cerrados te recomiendo."</p>
+        <div class="testi-author">Niurka — Caso complicado resuelto</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCENTE -->
+<section class="docente-section">
+  <div class="container">
+    <div class="docente-grid">
+      <div class="docente-portrait">
+        <div class="docente-portrait-inner">
+          <div class="docente-initials">ER</div>
+          <div class="docente-name-portrait">Evelynne Rojas</div>
+        </div>
+      </div>
+      <div class="docente-content">
+        <div class="section-tag" style="color:var(--gold-light);">Tu docente</div>
+        <h2 class="section-heading">Formada donde se <em>opera y se recupera</em></h2>
+        <p class="section-lead">No teoría de libro. Formación real, en quirófano, con cirujanos plásticos y dos centros propios operando en Lima.</p>
+        <ul class="creds">
+          <li class="cred">Especialista en rehabilitación postoperatoria — Brasil, Colombia, Venezuela</li>
+          <li class="cred">Cosmiatra y Dermocosmiatra con base en Administración de Empresas y RRHH</li>
+          <li class="cred">Entrenamiento en quirófano con cirujanos plásticos certificados</li>
+          <li class="cred">Fundadora de Surgery Recovery 360 — Surco (Av. Aviación 2919) y Lurín</li>
+          <li class="cred">Especialista en fibrosis postquirúrgica compleja y casos críticos derivados</li>
+          <li class="cred">Formadora de equipos de clínicas estéticas en Lima Metropolitana</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL BAR -->
+<section class="social-section">
+  <div class="social-inner">
+    <a href="https://wa.me/51935159381" class="social-link" target="_blank" rel="noopener">
+      <span class="social-icon">💬</span> WhatsApp
+    </a>
+    <a href="https://www.tiktok.com/@eve_surgeryrecovery360?_r=1&_t=ZS-96gvGKbs6I0" class="social-link" target="_blank" rel="noopener">
+      <span class="social-icon">▶</span> TikTok
+    </a>
+    <a href="https://www.instagram.com/eve_esthetic_health?utm_source=qr&igsh=MW1sbDd4d2h1cHJtMA==" class="social-link" target="_blank" rel="noopener">
+      <span class="social-icon">◎</span> Instagram
+    </a>
+    <a href="mailto:evegreycas@gmail.com" class="social-link">
+      <span class="social-icon">✉</span> Email
+    </a>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <h2 class="section-heading">Este programa no es para todas.<br><em>Es para las que van en serio.</em></h2>
+    <p class="section-lead">Si estás lista para cobrar lo que vales, protegerte legalmente y convertirte en la referente de postquirúrgico que tu mercado necesita — el 22 de junio empieza tu nueva carrera.</p>
+    <a href="https://wa.me/51935159381?text=Hola%20Evelynne%2C%20quiero%20inscribirme%20al%20programa%20de%20especialización%20postquirúrgico%20que%20inicia%20el%2022%20de%20junio" class="btn-final" target="_blank" rel="noopener">Hablar con Evelynne por WhatsApp</a>
+    <p class="cta-contact">
+      <a href="tel:+51935159381">+51 935 159 381</a> ·
+      <a href="mailto:evegreycas@gmail.com">evegreycas@gmail.com</a> ·
+      <a href="https://www.instagram.com/eve_esthetic_health?utm_source=qr&igsh=MW1sbDd4d2h1cHJtMA==" target="_blank" rel="noopener">@eve_esthetic_health</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Surgery Recovery 360 · Evelynne Rojas González</div>
+  <div class="footer-links">
+    <a href="https://wa.me/51935159381" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.tiktok.com/@eve_surgeryrecovery360?_r=1&_t=ZS-96gvGKbs6I0" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.instagram.com/eve_esthetic_health?utm_source=qr&igsh=MW1sbDd4d2h1cHJtMA==" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:evegreycas@gmail.com">evegreycas@gmail.com</a>
+  </div>
+  <div class="footer-copy">Av. Aviación 2919, San Borja Sur · Lima, Perú · © 2025</div>
+</footer>
+
+<script>
+function toggleMonth(header){
+  var classes=header.nextElementSibling;
+  var arrow=header.querySelector('.month-arrow');
+  var isOpen=classes.classList.contains('open');
+  classes.classList.toggle('open',!isOpen);
+  arrow.classList.toggle('open',!isOpen);
+}
+</script>
+</body>
+</html>
